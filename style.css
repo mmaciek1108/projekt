@@ -16,10 +16,12 @@ body
 #plansza
 {
     width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
-
+    font-size: 48px;
 }
 
 #szubienica
@@ -27,6 +29,7 @@ body
     float: left;
     width: 450px;
     text-align: center;
+    min-height: 280px;
 }
 
 #alfabet
@@ -34,4 +37,25 @@ body
     float: left;
     width: 450px;
     text-align: center;
+    min-height: 280px;
+}
+
+.litera
+{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid gray;
+    float: left;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.litera:hover
+{
+    background-color: #222222;
+    color: white;
+    border: 3px solid white;
 }
