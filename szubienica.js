@@ -1,4 +1,4 @@
-var haslo = "Bez pracy nie ma kołaczy";
+var haslo = "Bez pracy nie ma kołaczy tak";
 haslo = haslo.toUpperCase(); //wielkie litery
 var dlugosc = haslo.length; //lenght -  wlaściwość (cecha atrybut) nie funkcja!!
 
@@ -57,15 +57,31 @@ litery[34] = "Ź";
 
 function start()
 {
-    var tresc_diva = "";
+    let tresc_diva = "";
 
     for (i=0; i<=34; i++)
     {
-        tresc_diva=tresc_diva+'<div class="litera">'+ litery[i]+'</div>';
+        let element = "lit"+i;
+        tresc_diva=tresc_diva+'<div class="litera" onclick="sprawdz('+i+')" id="'+element+'">'+ litery[i]+'</div>';
         if ((i+1)%7==0) tresc_diva=tresc_diva+'<div style="clear:both;"></div>'
     }
 
     document.getElementById("alfabet").innerHTML= tresc_diva;
 
     wypisz_haslo();
+}
+
+String.prototype.ustawZnak = function(miejsce, znak){
+    if(miejsce > this.length - 1) return this.toString();
+    else return this.substring(0, 1) + znak + this.substring(miejsce+1);
+}
+
+
+function sprawdz(nr){
+    for(let i=0; i<dlugosc; i++){
+        if (haslo.charAt(i) == litery[nr]){
+            haslo1 = haslo1.ustawZnak(i, litery[nr]);
+        }
+    }
+
 }
